@@ -17,18 +17,18 @@ body {
 
 @font-face {
   font-family: 'Chiller';
-  src: url('../EJ08_PORTFOLÍO/css/fonts/ChillerStd.otf');
+  src: url('../LAGITANA/css/fonts/ChillerStd.otf');
 }
 
 @font-face {
   font-family: 'Bembo';
-  src: url('../EJ08_PORTFOLÍO/css/fonts/BemboStd-Italic.otf');
-  
+  src: url('../LAGITANA/css/fonts/BemboStd-Italic.otf');
+
 }
 
 @font-face {
   font-family: 'YoungBaroque';
-  src: url('../EJ08_PORTFOLÍO/css/fonts/YoungBaroqueStd.otf');
+  src: url('../LAGITANA/css/fonts/YoungBaroqueStd.otf');
 }
 
 
@@ -42,16 +42,10 @@ body {
 .background-text span {
   position: absolute;
   font-size: 90px;
-  color: rgba(255,255,255,0.04);
+  color: rgba(255, 255, 255, 0.04);
   letter-spacing: 6px;
 }
 
-.background-text span:nth-child(1) { top: 10%; left: 5%; }
-.background-text span:nth-child(2) { top: 30%; right: 10%; }
-.background-text span:nth-child(3) { top: 55%; left: 15%; }
-.background-text span:nth-child(4) { bottom: 20%; right: 20%; }
-.background-text span:nth-child(5) { top: 75%; left: 40%; }
-.background-text span:nth-child(6) { top: 15%; right: 35%; }
 
 
 .header {
@@ -76,80 +70,67 @@ body {
 
 
 nav a {
-  color: #fff;
+  color: #e20707;
   margin-left: 20px;
   text-decoration: none;
   font-size: 14px;
 }
 
-nav a:hover {
-  color: #c62828;
-}
 
 
 .hero {
-  height: 100vh;
   position: relative;
-  background: #000;
+  width: 100%;
+  height: 100vh;
   overflow: hidden;
-  z-index: 2;
 }
 
 .hero-video {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.45;
+  z-index: 1;
 }
 
-.hero-overlay {
+.hero::after {
+  content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.6);
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2;
 }
 
 .hero-content {
   position: relative;
   z-index: 3;
   height: 100%;
-  padding-top: 140px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
+  text-align: center;
+  padding: 20px;
 }
 
-
-.cd-container {
-  margin-bottom: 50px;
-}
-
-.cd {
-  width: 260px;
-  height: 260px;
-  border-radius: 50%;
-  background-image: url("css/img/PORTADA.png"); 
-  background-size: cover;
-  background-position: center;
-  border: 5px solid var(--rojo);
-  
+.hero-logo {
+  width: 420px;
+  max-width: 80%;
 }
 
 .hero-text {
-  text-align: center;
-  max-width: 600px;
-}
-
-.hero-text h1 {
-  font-size: 56px;
-  margin-bottom: 20px;
+  margin-top: 30px;
+  color: rgb(163, 66, 66);
+  font-size: 14px;
+  letter-spacing: 2px;
+  font-family: monospace;
 }
 
 
 .cards-section {
   padding: 120px 60px;
-  position: relative;
   z-index: 2;
 }
 
@@ -160,9 +141,8 @@ nav a:hover {
 }
 
 .card {
-  position: relative;
   height: 380px;
-  border: 2px solid var(--blanco);
+  border: 2px solid #ed0707;
   overflow: hidden;
   cursor: pointer;
   transition: transform 0.4s, border-color 0.4s;
@@ -178,7 +158,6 @@ nav a:hover {
 
 
 .card h3 {
-  position: absolute;
   bottom: 25px;
   left: 25px;
   font-size: 30px;
@@ -188,9 +167,8 @@ nav a:hover {
 
 .card::after {
   content: "";
-  position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.35);
+  background: rgba(0, 0, 0, 0.35);
 }
 
 
@@ -209,7 +187,7 @@ nav a:hover {
 .footer {
   text-align: center;
   padding: 30px;
-  border-top: 4px solid var(--rojo);
+  border-top: 4px solid #ed0707  ;
   position: relative;
   z-index: 2;
 }
@@ -217,30 +195,162 @@ nav a:hover {
 .footer .copyright {
   position: absolute;
   bottom: 10px;
-  right: 20px;          
+  right: 20px;
   font-size: 12px;
   opacity: 0.6;
 }
 
 
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  padding: 80px 60px;
+  background-color: #000;
+}
 
-@media (max-width: 900px) {
-  .cards {
-    grid-template-columns: 1fr;
+.card {
+  color: #ffffff;
+}
+
+.card-image {
+  width: 100%;
+  height: 260px;
+  background-size: cover;
+  background-position: center;
+  border: 1px solid #ec0a0a;
+  transition: background-image 8s ease;
+}
+
+/* IMÁGENES FIJAS */
+.flamenco {
+  background-image: url("css/img/guitarra.jpeg");
+}
+
+.urbano {
+  background-image: url("css/img/urbano3.jpeg");
+}
+
+.cultura {
+  background-image: url("images/cultura-1.jpg");
+}
+
+@keyframes flamencoSlide {
+  20% {
+    background-image: url("css/img/flamenco3.jpeg");
   }
 
-  .cd {
-    width: 180px;
-    height: 180px;
+  25% {
+    background-image: url("css/img/flamenco2.jpeg");
   }
 
-  .hero-text h1 {
-    font-size: 38px;
+  50% {
+    background-image: url("css/img/flamenco5.jpeg");
   }
+
+  75% {
+    background-image: url("css/img/cultura.jpeg");
+  }
+
+  100% {
+    background-image: url("css/img/urbano1.jpeg");
+  }
+}
+
+@keyframes urbanoSlide {
+  20% {
+    background-image: url("css/img/urbano1.jpeg");
+  }
+
+  25% {
+    background-image: url("css/img/urbano2.jpeg");
+  }
+
+  50% {
+    background-image: url("css/img/urbano3.jpeg");
+  }
+
+  75% {
+    background-image: url("css/img/urbano4.jpeg");
+  }
+
+  100% {
+    background-image: url("css/img/urbano5.jpeg");
+  }
+}
+
+@keyframes culturaSlide {
+  20% {
+    background-image: url("images/cultura-1.jpg");
+  }
+
+  25% {
+    background-image: url("images/cultura-2.jpg");
+  }
+
+  50% {
+    background-image: url("images/cultura-3.jpg");
+  }
+
+  75% {
+    background-image: url("images/cultura-4.jpg");
+  }
+
+  100% {
+    background-image: url("images/cultura-1.jpg");
+  }
+}
+
+.card:hover .flamenco {
+  animation: flamencoSlide 8s infinite;
+}
+
+.card:hover .urbano {
+  animation: urbanoSlide 8s infinite;
+}
+
+.card:hover .cultura {
+  animation: culturaSlide 8s infinite;
 }
 
 
 
+/* TEXTO DEBAJO DE LA IMAGEN */
+.card-title {
+  margin-top: 20px;
+  font-size: 28px;
+}
+
+.card-text {
+  margin-top: 8px;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.card {
+  text-align: center;
+}
+
+.card-title {
+  text-align: center;
+}
+
+.card-text {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  color: rgb(216, 33, 33);
+}
 
 
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr;
+    padding: 60px 20px;
+  }
 
+  .card-image {
+    height: 220px;
+  }
+}
