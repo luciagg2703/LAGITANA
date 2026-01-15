@@ -187,7 +187,7 @@ nav a {
 .footer {
   text-align: center;
   padding: 30px;
-  border-top: 4px solid #ed0707  ;
+  border-top: 4px solid #ed0707;
   position: relative;
   z-index: 2;
 }
@@ -333,6 +333,10 @@ nav a {
 
 .card-title {
   text-align: center;
+  font-family: "banshee-std", sans-serif;
+  font-style: normal;
+  margin-top: 20px;
+  font-size: 28px;
 }
 
 .card-text {
