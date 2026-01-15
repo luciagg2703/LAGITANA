@@ -116,16 +116,16 @@ nav a {
 }
 
 .hero-logo {
-  width: 420px;
+  width: 650px;
   max-width: 80%;
 }
 
 .hero-text {
   margin-top: 30px;
-  color: rgb(163, 66, 66);
-  font-size: 14px;
+  color: rgb(255, 255, 255);
+  font-size: 25px;
   letter-spacing: 2px;
-  font-family: monospace;
+  font-family: "adobe-garamond-pro", serif;
 }
 
 
@@ -323,7 +323,7 @@ nav a {
 
 .card-text {
   margin-top: 8px;
-  font-size: 14px;
+  font-size: 20px;
   opacity: 0.8;
 }
 
@@ -335,7 +335,7 @@ nav a {
   text-align: center;
   font-family: "banshee-std", sans-serif;
   font-style: normal;
-  margin-top: 20px;
+  margin-top: 18px;
   font-size: 28px;
 }
 
@@ -343,7 +343,8 @@ nav a {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
-  color: rgb(216, 33, 33);
+  color: rgb(205, 21, 21);
+  font-family: "adobe-garamond-pro", serif;
 }
 
 
